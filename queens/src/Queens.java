@@ -1,12 +1,38 @@
 public class Queens {
+    static int N = 8;
+    static int[] cols = new int [N+1];
 
     public static void main(String[] args) {
+        queens(0);
 
     }
 
 
-    public static void queens(){
+    public static boolean queens(int level){
+        if(!possiblePlacement(level))
+            return false;
+        else if (level == N){
+            for (int i = 1; i <= N; i++) {
+                System.out.println("("+ i + "," + cols[i] + ")");
+            }
+            return true;
+        }
+        for (int i = 1; i <= N; i++) {
+            cols[level+1] = i;
+            if(queens(level+1))
+                return true;
+        }
+        return false;
+    }
 
+    public static boolean possiblePlacement(int level){
+        for (int i = 1; i < level; i++) {
+            if(cols[i] == cols[level])
+                return false;
+            else if (level-i == Math.abs(cols[level] - cols[i]))
+                return false;
+        }
+        return true;
     }
 
 }
