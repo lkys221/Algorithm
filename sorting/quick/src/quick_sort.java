@@ -24,19 +24,15 @@ public class quick_sort {
 
     private static int sort(int[] arr, int a, int c){
         int i = a-1;
-        int j = a;
         int pivot = arr[c];
         int tmp, tmp2;
 
-        for (int k = a; k < c-1; k++) {
-            if(arr[j] > pivot)
-                j++;
-            else{
+        for (int j = a; j < c; j++) {
+            if(arr[j] <= pivot) {
                 i++;
                 tmp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = tmp;
-                j++;
             }
         }
 
