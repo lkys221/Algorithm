@@ -11,6 +11,14 @@ public class heap_sort {
 
     }
 
+    private static void buildHeap(int[] arr){
+
+    }
+
+    private static void heapfiy(int[] arr, int num){
+
+    }
+    
     private static void print(int[] arr){
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
