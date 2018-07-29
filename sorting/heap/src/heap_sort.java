@@ -2,9 +2,8 @@ public class heap_sort {
 
     public static void main(String[] args) {
 
-        int[] array = {-1, 5, 8, 14, 1, 3, 9, 15, 16, 2, 6, 12};
-        heapfiy(array, 1);
-        print(array);
+        int[] array = {-1, 5, 8, 17, 3, 9, 2, 6, 12};
+        buildHeap(array);
 
 
     }
@@ -14,18 +13,26 @@ public class heap_sort {
     }
 
     private static void buildHeap(int[] arr){
-
+        for (int i = (arr.length-1)/2; i >= 1; i--) {
+            heapfiy(arr, i);
+        }
+        print(arr);
     }
 
     private static void heapfiy(int[] arr, int num){
         int k, tmp;
+
         if(num*2 > arr.length)
             return;
         else{
-            if(arr[num*2] > arr[num*2 +1])
+            if(arr.length%2 == 1)
                 k = num*2;
-            else
-                k = num*2 +1;
+            else{
+                if(arr[num*2] >= arr[num*2 +1])
+                    k = num*2;
+                else
+                    k = num*2 +1;
+            }
 
             if(arr[num] >=  arr[k])
                 return;
@@ -33,9 +40,7 @@ public class heap_sort {
                 tmp = arr[num];
                 arr[num] = arr[k];
                 arr[k] = tmp;
-                print(arr);
                 heapfiy(arr, k);
-
             }
         }
 
