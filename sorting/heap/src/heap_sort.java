@@ -16,7 +16,6 @@ public class heap_sort {
         for (int i = (arr.length-1)/2; i >= 1; i--) {
             heapfiy(arr, i);
         }
-        print(arr);
     }
 
     private static void heapfiy(int[] arr, int num){
@@ -25,7 +24,7 @@ public class heap_sort {
         if(num*2 > arr.length)
             return;
         else{
-            if(arr.length%2 == 1)
+            if(arr.length%2 == 1 && num == (arr.length-1)/2 )
                 k = num*2;
             else{
                 if(arr[num*2] >= arr[num*2 +1])
@@ -36,12 +35,11 @@ public class heap_sort {
 
             if(arr[num] >=  arr[k])
                 return;
-            else{
-                tmp = arr[num];
-                arr[num] = arr[k];
-                arr[k] = tmp;
-                heapfiy(arr, k);
-            }
+
+            tmp = arr[num];
+            arr[num] = arr[k];
+            arr[k] = tmp;
+            heapfiy(arr, k);
         }
 
     }
