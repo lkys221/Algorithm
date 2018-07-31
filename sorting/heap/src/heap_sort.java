@@ -11,14 +11,14 @@ public class heap_sort {
 
     private static void heapSort(int[] arr){
         int heap_size = arr.length-1;
+        int tmp;
         buildHeap(arr);
         for (int i = heap_size; i >= 2; i--) {
-            int tmp = arr[1];
+            tmp = arr[1];
             arr[1] = arr[i];
             arr[i] = tmp;
             heap_size--;
             heapfiy(arr, 1);
-
         }
     }
 
