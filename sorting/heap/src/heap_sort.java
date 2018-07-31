@@ -3,13 +3,23 @@ public class heap_sort {
     public static void main(String[] args) {
 
         int[] array = {-1, 5, 8, 17, 3, 9, 2, 6, 12};
-        buildHeap(array);
+        heapSort(array);
+        print(array);
 
 
     }
 
     private static void heapSort(int[] arr){
+        int heap_size = arr.length-1;
+        buildHeap(arr);
+        for (int i = heap_size; i >= 2; i--) {
+            int tmp = arr[1];
+            arr[1] = arr[i];
+            arr[i] = tmp;
+            heap_size--;
+            heapfiy(arr, 1);
 
+        }
     }
 
     private static void buildHeap(int[] arr){
