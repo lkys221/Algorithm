@@ -2,7 +2,7 @@ public class heap_sort {
 
     public static void main(String[] args) {
 
-        int[] array = {-1, 5, 8, 2, 6, 12};
+        int[] array = {-1, 5, 8, 17, 3, 9, 2, 6, 12};
         heapSort(array);
         print(array);
 
