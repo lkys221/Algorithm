@@ -2,7 +2,7 @@ public class heap_sort {
 
     public static void main(String[] args) {
 
-        int[] array = {-1, 5, 8, 2, 6, 7, 1, 12};
+        int[] array = {-1, 5, 8, 2, 6, 12};
         heapSort(array);
         print(array);
 
@@ -26,7 +26,6 @@ public class heap_sort {
         for (int i = (arr.length-1)/2; i >= 1; i--) {
             heapfiy(arr, i);
         }
-        print(arr);
     }
 
     private static void heapfiy(int[] arr, int num){
