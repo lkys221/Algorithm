@@ -38,8 +38,6 @@ public class heap_sort {
             if(arr.length%2 == 1 && num == (arr.length-1)/2 )
                 k = num*2;
             else{
-
-                
                 if(arr[num*2] >= arr[num*2 +1])
                     k = num*2;
                 else
